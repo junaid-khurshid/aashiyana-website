@@ -19,7 +19,7 @@ export default function Home() {
       <header>
         <nav>
           <a href="#" className="nav-logo">
-            <Image src="/logo.png" alt="Aashiyana Associates logo" width={44} height={44} style={{ objectFit:"contain", marginRight:"10px" }} />
+            <Image src="/logo.png" alt="Aashiyana Associates logo" width={44} height={44} style={{ objectFit: "contain", marginRight: "10px" }} />
             Aashiyana <em>Associates</em>
           </a>
           <ul className="nav-links">
@@ -260,7 +260,7 @@ export default function Home() {
             ].map((listing, i) => (
               <div className="listing-card" key={i}>
                 <div className="listing-img">
-                  <Image src={listing.img} alt={listing.title} width={400} height={200} style={{ width:"100%", height:"200px", objectFit:"cover", display:"block" }} />
+                  <Image src={listing.img} alt={listing.title} width={400} height={200} style={{ width: "100%", height: "200px", objectFit: "cover", display: "block" }} />
                   <div className="listing-badge-wrap">
                     <span className={`badge ${listing.type === "rent" ? "badge-rent" : "badge-sale"}`}>
                       {listing.type === "rent" ? "For Rent" : "For Sale"}
@@ -374,7 +374,7 @@ export default function Home() {
                   </div>
                   <div className="contact-item-text">
                     <strong>Email</strong>
-                    info@aashiyanaassociates.com
+                    syedkhurshid.sk@gmail.com
                   </div>
                 </div>
               </div>
@@ -415,9 +415,9 @@ export default function Home() {
         <div className="footer-top">
           <div className="footer-brand">
             <span className="footer-logo">
-            <Image src="/logo.png" alt="Aashiyana Associates" width={36} height={36} style={{ objectFit:"contain", marginRight:"8px", verticalAlign:"middle" }} />
-            Aashiyana <em>Associates</em>
-          </span>
+              <Image src="/logo.png" alt="Aashiyana Associates" width={36} height={36} style={{ objectFit: "contain", marginRight: "8px", verticalAlign: "middle" }} />
+              Aashiyana <em>Associates</em>
+            </span>
             <p className="footer-tagline">Your trusted real estate partner across North Karachi and surrounding areas since over a decade.</p>
           </div>
           <div className="footer-col">
