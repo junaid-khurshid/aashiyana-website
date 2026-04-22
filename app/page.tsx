@@ -286,7 +286,7 @@ export default function Home() {
           <div className="whyus-grid">
             <div className="whyus-left">
               <div className="section-eyebrow"><span></span><p>Why Choose Us</p></div>
-              <h2>Karachi Real Estate,<br />Done Right</h2>
+              <h2>Aashiyana Real Estate,<br />Done Right</h2>
               <p>At Aashiyana Associates, we combine deep local knowledge with transparent service. Our team has been operating in North Karachi&apos;s property market for over a decade — and our clients keep coming back.</p>
               <div className="whyus-points">
                 {[
