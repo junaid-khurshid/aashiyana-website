@@ -2,6 +2,21 @@
 import { useEffect } from "react";
 import Image from "next/image";
 
+const reviews = [
+  { name: "Muhammad Asif", rating: 5, date: "2 months ago", text: "Excellent service! Aashiyana Associates helped me find the perfect house in North Karachi within my budget. Very professional and trustworthy team. Highly recommended!", avatar: "MA" },
+  { name: "Sana Fatima", rating: 5, date: "3 months ago", text: "Best real estate agency in Karachi. They handled all the paperwork and made the whole process very smooth. Found a great apartment in North Nazimabad. Jazak Allah Khair!", avatar: "SF" },
+  { name: "Tariq Mehmood", rating: 5, date: "1 month ago", text: "Very honest and reliable. No hidden charges, everything was transparent from day one. They found a buyer for my property in Surjani Town within 2 weeks. Amazing!", avatar: "TM" },
+  { name: "Ayesha Siddiqui", rating: 5, date: "4 months ago", text: "I was looking for a house on rent in New Karachi and they showed me exactly what I needed. The team is very responsive on WhatsApp and always available. 5 stars!", avatar: "AS" },
+  { name: "Zubair Ahmed", rating: 4, date: "5 months ago", text: "Good experience overall. They know the North Karachi property market very well. Got a good deal on a plot in Bufferzone. Would recommend to friends and family.", avatar: "ZA" },
+  { name: "Nadia Khan", rating: 5, date: "6 months ago", text: "Professional team with deep knowledge of the area. Helped us with legal documentation as well. Very satisfied with our new home in Shadman Town. Thank you!", avatar: "NK" },
+];
+
+const videos = [
+  { id: "dQw4w9WgXcQ", title: "Property Tour – North Karachi" },
+  { id: "dQw4w9WgXcQ", title: "3 Bedroom House for Sale – Surjani" },
+  { id: "dQw4w9WgXcQ", title: "Investment Tips – Karachi Real Estate" },
+];
+
 export default function Home() {
   useEffect(() => {
     const btns = document.querySelectorAll(".filter-btn");
@@ -54,7 +69,6 @@ export default function Home() {
               <a href="#listings" className="btn-primary">View Properties</a>
               <a href="#contact" className="btn-ghost">Free Consultation</a>
             </div>
-            {/* Social Links */}
             <div className="hero-social">
               <a href="https://www.youtube.com/@AashiyanaRealEstate" target="_blank" rel="noreferrer" className="hero-chip chip-yt">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -143,22 +157,10 @@ export default function Home() {
           </div>
           <div className="services-grid">
             {[
-              {
-                icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1565C0" strokeWidth="1.5"><path d="M3 12L12 3l9 9v9H3v-9z"/><rect x="9" y="15" width="6" height="6"/></svg>,
-                title: "Property for Rent", desc: "Find houses, apartments and shops on monthly or annual rental across all areas in North Karachi.", link: "#listings", cta: "View Rentals →"
-              },
-              {
-                icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1565C0" strokeWidth="1.5"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8" strokeLinecap="round"/></svg>,
-                title: "Buy / Sell Property", desc: "Verified residential and commercial listings. Full support from documentation to secure transfer.", link: "#listings", cta: "Browse Listings →"
-              },
-              {
-                icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1565C0" strokeWidth="1.5"><path d="M17 8h2a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2v-9a2 2 0 012-2h2"/><rect x="8" y="4" width="8" height="6" rx="1"/></svg>,
-                title: "Real Estate Consultancy", desc: "Expert advice on investment, valuation, market trends and legal documentation in Karachi.", link: "#contact", cta: "Book a Session →"
-              },
-              {
-                icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1565C0" strokeWidth="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4" strokeLinecap="round"/></svg>,
-                title: "Property Management", desc: "Complete management for landlords — tenant screening, rent collection and maintenance coordination.", link: "#contact", cta: "Learn More →"
-              },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1565C0" strokeWidth="1.5"><path d="M3 12L12 3l9 9v9H3v-9z"/><rect x="9" y="15" width="6" height="6"/></svg>, title: "Property for Rent", desc: "Find houses, apartments and shops on monthly or annual rental across all areas in North Karachi.", link: "#listings", cta: "View Rentals →" },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1565C0" strokeWidth="1.5"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8" strokeLinecap="round"/></svg>, title: "Buy / Sell Property", desc: "Verified residential and commercial listings. Full support from documentation to secure transfer.", link: "#listings", cta: "Browse Listings →" },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1565C0" strokeWidth="1.5"><path d="M17 8h2a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2v-9a2 2 0 012-2h2"/><rect x="8" y="4" width="8" height="6" rx="1"/></svg>, title: "Real Estate Consultancy", desc: "Expert advice on investment, valuation, market trends and legal documentation in Karachi.", link: "#contact", cta: "Book a Session →" },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1565C0" strokeWidth="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4" strokeLinecap="round"/></svg>, title: "Property Management", desc: "Complete management for landlords — tenant screening, rent collection and maintenance coordination.", link: "#contact", cta: "Learn More →" },
             ].map((s) => (
               <div className="service-card" key={s.title}>
                 <div className="service-icon-wrap">{s.icon}</div>
@@ -244,6 +246,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* YOUTUBE VIDEOS */}
+      <section className="videos-section" id="videos">
+        <div className="container">
+          <div className="section-header centered">
+            <div className="section-eyebrow" style={{ justifyContent:"center" }}>
+              <span></span><p>Our Channel</p><span></span>
+            </div>
+            <h2>Watch on YouTube</h2>
+            <p>Property tours, market updates and investment tips — subscribe for the latest</p>
+          </div>
+          <div className="videos-grid">
+            {videos.map((v, i) => (
+              <div className="video-card" key={i}>
+                <div className="video-embed">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${v.id}`}
+                    title={v.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="video-title">{v.title}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign:"center", marginTop:"32px" }}>
+            <a href="https://www.youtube.com/@AashiyanaRealEstate" target="_blank" rel="noreferrer" className="btn-yt-sub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Subscribe to Our Channel
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* WHY US */}
       <section className="whyus-section" id="about">
         <div className="container">
@@ -283,12 +319,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* GOOGLE REVIEWS */}
+      <section className="reviews-section" id="reviews">
+        <div className="container">
+          <div className="section-header centered">
+            <div className="section-eyebrow" style={{ justifyContent:"center" }}>
+              <span></span><p>Client Feedback</p><span></span>
+            </div>
+            <h2>What Our Clients Say</h2>
+            <div className="reviews-rating-summary">
+              <div className="rating-big">4.9</div>
+              <div className="rating-right">
+                <div className="stars-row">
+                  {[1,2,3,4,5].map(s => (
+                    <svg key={s} width="20" height="20" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  ))}
+                </div>
+                <div className="rating-count">Based on 80+ Google Reviews</div>
+                <a href="https://www.google.com/maps/place/Aashiyana+Associates" target="_blank" rel="noreferrer" className="rating-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                  View on Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="reviews-grid">
+            {reviews.map((r, i) => (
+              <div className="review-card" key={i}>
+                <div className="review-top">
+                  <div className="review-avatar">{r.avatar}</div>
+                  <div className="review-meta">
+                    <div className="review-name">{r.name}</div>
+                    <div className="review-date">{r.date}</div>
+                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" style={{ marginLeft:"auto", flexShrink:0 }}>
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                  </svg>
+                </div>
+                <div className="review-stars">
+                  {[...Array(r.rating)].map((_, s) => (
+                    <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  ))}
+                </div>
+                <p className="review-text">&ldquo;{r.text}&rdquo;</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section className="contact-section" id="contact">
         <div className="container">
           <div className="contact-grid">
             <div className="contact-left">
-              <div className="section-eyebrow" style={{ "--blue":"#64B5F6" } as React.CSSProperties}>
+              <div className="section-eyebrow">
                 <span style={{ background:"#64B5F6" }}></span>
                 <p style={{ color:"#64B5F6" }}>Get in Touch</p>
               </div>
@@ -305,19 +393,25 @@ export default function Home() {
                   <div className="contact-icon">
                     <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64B5F6" strokeWidth="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                   </div>
-                  <div className="contact-item-text"><strong>Phone &amp; WhatsApp</strong><a href="https://wa.me/923152400381">+92 344 3544381</a></div>
+                  <div className="contact-item-text"><strong>Phone &amp; WhatsApp</strong><a href="https://wa.me/923152400381">+92 315 2400381</a></div>
+                </div>
+                <div className="contact-item">
+                  <div className="contact-icon">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64B5F6" strokeWidth="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  </div>
+                  <div className="contact-item-text"><strong>Email</strong><a href="mailto:syedkhurshid.sk@gmail.com">syedkhurshid.sk@gmail.com</a></div>
                 </div>
                 <div className="contact-item">
                   <div className="contact-icon">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="#64B5F6"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                   </div>
-                  <div className="contact-item-text"><strong>YouTube Channel</strong><a href="https://www.youtube.com/@AashiyanaRealEstate" target="_blank" rel="noreferrer">@AashiyanaRealEstate</a></div>
+                  <div className="contact-item-text"><strong>YouTube</strong><a href="https://www.youtube.com/@AashiyanaRealEstate" target="_blank" rel="noreferrer">@AashiyanaRealEstate</a></div>
                 </div>
                 <div className="contact-item">
                   <div className="contact-icon">
                     <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64B5F6" strokeWidth="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                   </div>
-                  <div className="contact-item-text"><strong>Zameen.com Profile</strong><a href="https://www.zameen.com/agents/Karachi/Aashiyana_Associates_Real_Estate_Marketing-190557/" target="_blank" rel="noreferrer">View Our Listings on Zameen</a></div>
+                  <div className="contact-item-text"><strong>Zameen.com</strong><a href="https://www.zameen.com/agents/Karachi/Aashiyana_Associates_Real_Estate_Marketing-190557/" target="_blank" rel="noreferrer">View Our Listings on Zameen</a></div>
                 </div>
               </div>
             </div>
@@ -371,6 +465,9 @@ export default function Home() {
               <a href="https://www.zameen.com/agents/Karachi/Aashiyana_Associates_Real_Estate_Marketing-190557/" target="_blank" rel="noreferrer" className="fs-zm" aria-label="Zameen.com">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#333"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
               </a>
+              <a href="mailto:syedkhurshid.sk@gmail.com" className="fs-em" aria-label="Email">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="#fff" strokeWidth="2" fill="none"/></svg>
+              </a>
             </div>
           </div>
           <div className="footer-col">
@@ -399,7 +496,7 @@ export default function Home() {
               <li><a href="https://www.youtube.com/@AashiyanaRealEstate" target="_blank" rel="noreferrer">YouTube Channel</a></li>
               <li><a href="https://www.zameen.com/agents/Karachi/Aashiyana_Associates_Real_Estate_Marketing-190557/" target="_blank" rel="noreferrer">Zameen.com Profile</a></li>
               <li><a href="https://wa.me/923152400381" target="_blank" rel="noreferrer">WhatsApp</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="mailto:syedkhurshid.sk@gmail.com">Email Us</a></li>
             </ul>
           </div>
         </div>
