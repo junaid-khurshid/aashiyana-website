@@ -34,6 +34,7 @@ nav {
 .nav-logo {
   font-family: var(--serif); font-size: 22px; color: #fff;
   text-decoration: none; letter-spacing: 0.02em;
+  display: flex; align-items: center; gap: 10px;
 }
 .nav-logo em { color: var(--gold); font-style: normal; }
 .nav-links { display: flex; gap: 32px; list-style: none; }
