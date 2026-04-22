@@ -247,7 +247,7 @@ export default function Home() {
       </section>
 
       {/* YOUTUBE VIDEOS */}
-      <section className="videos-section" id="videos">
+      {/* <section className="videos-section" id="videos">
         <div className="container">
           <div className="section-header centered">
             <div className="section-eyebrow" style={{ justifyContent:"center" }}>
@@ -278,7 +278,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* WHY US */}
       <section className="whyus-section" id="about">
