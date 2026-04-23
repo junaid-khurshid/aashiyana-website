@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const reviews = [
@@ -14,12 +14,25 @@ const reviews = [
 // ⚠️ REPLACE THESE IDs with your real YouTube Shorts IDs
 // Get the ID from: youtube.com/shorts/COPY_THIS_ID
 const shorts = [
-  { id: "vanAaL8q5Mw", title: "Property Tour – North Karachi" },
-  { id: "zzD_UWKAbXk", title: "House for Sale – Surjani Town" },
-  { id: "X7jDdamsppE", title: "Karachi Real Estate Tips" },
+  { id: "REPLACE_SHORT_ID_1", title: "Property Tour – North Karachi" },
+  { id: "REPLACE_SHORT_ID_2", title: "House for Sale – Surjani Town" },
+  { id: "REPLACE_SHORT_ID_3", title: "Karachi Real Estate Tips" },
 ];
 
 export default function Home() {
+  const [formStatus, setFormStatus] = useState<"idle"|"sending"|"sent"|"error">("idle");
+
+  async function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setFormStatus("sending");
+    const res = await fetch("https://formspree.io/f/mrerojdw", {
+      method: "POST",
+      body: new FormData(e.currentTarget),
+      headers: { Accept: "application/json" },
+    });
+    setFormStatus(res.ok ? "sent" : "error");
+  }
+
   useEffect(() => {
     const btns = document.querySelectorAll(".filter-btn");
     btns.forEach((btn) => {
@@ -457,7 +470,7 @@ export default function Home() {
                 ></iframe>
               </div>
 
-              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+              <form className="contact-form" onSubmit={handleContactSubmit}>
                 <div className="contact-form-row">
                   <input type="text" placeholder="Your Name" />
                   <input type="tel" placeholder="Phone Number" />
@@ -482,7 +495,17 @@ export default function Home() {
                   <option>Any Area</option>
                 </select>
                 <textarea placeholder="Additional details or questions..."></textarea>
-                <button type="submit" className="form-submit">Send Enquiry →</button>
+                {formStatus === "sent" ? (
+                <div className="form-success">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" strokeLinecap="round"/></svg>
+                  Message sent! We&apos;ll contact you within 1 hour.
+                </div>
+              ) : (
+                <button type="submit" className="form-submit" disabled={formStatus === "sending"}>
+                  {formStatus === "sending" ? "Sending…" : "Send Enquiry →"}
+                </button>
+              )}
+              {formStatus === "error" && <p className="form-error">Something went wrong. Please WhatsApp us directly.</p>}
               </form>
             </div>
           </div>
