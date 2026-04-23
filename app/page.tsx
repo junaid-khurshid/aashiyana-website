@@ -11,10 +11,12 @@ const reviews = [
   { name: "Nadia Khan", rating: 5, date: "6 months ago", text: "Professional team with deep knowledge of the area. Helped us with legal documentation as well. Very satisfied with our new home in Shadman Town. Thank you!", avatar: "NK" },
 ];
 
-const videos = [
-  { id: "dQw4w9WgXcQ", title: "Property Tour – North Karachi" },
-  { id: "dQw4w9WgXcQ", title: "3 Bedroom House for Sale – Surjani" },
-  { id: "dQw4w9WgXcQ", title: "Investment Tips – Karachi Real Estate" },
+// ⚠️ REPLACE THESE IDs with your real YouTube Shorts IDs
+// Get the ID from: youtube.com/shorts/COPY_THIS_ID
+const shorts = [
+  { id: "vanAaL8q5Mw", title: "Property Tour – North Karachi" },
+  { id: "zzD_UWKAbXk", title: "House for Sale – Surjani Town" },
+  { id: "X7jDdamsppE", title: "Karachi Real Estate Tips" },
 ];
 
 export default function Home() {
@@ -76,11 +78,11 @@ export default function Home() {
               </a>
               <a href="https://www.zameen.com/agents/Karachi/Aashiyana_Associates_Real_Estate_Marketing-190557/" target="_blank" rel="noreferrer" className="hero-chip chip-zm">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                Zameen.com Profile
+                Zameen.com
               </a>
               <a href="https://wa.me/923152400381" target="_blank" rel="noreferrer" className="hero-chip chip-wa">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                WhatsApp Us
+                WhatsApp
               </a>
             </div>
           </div>
@@ -246,20 +248,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* YOUTUBE VIDEOS */}
-      {/* <section className="videos-section" id="videos">
+      {/* YOUTUBE SHORTS */}
+      <section className="videos-section" id="videos">
         <div className="container">
           <div className="section-header centered">
             <div className="section-eyebrow" style={{ justifyContent:"center" }}>
-              <span></span><p>Our Channel</p><span></span>
+              <span style={{ background:"#FF0000" }}></span>
+              <p style={{ color:"#ff6b6b" }}>Our Channel</p>
+              <span style={{ background:"#FF0000" }}></span>
             </div>
-            <h2>Watch on YouTube</h2>
-            <p>Property tours, market updates and investment tips — subscribe for the latest</p>
+            <h2 style={{ color:"#fff" }}>Watch Our Shorts</h2>
+            <p style={{ color:"rgba(255,255,255,0.55)" }}>Property tours, market updates and tips — subscribe for the latest from Aashiyana Real Estate</p>
           </div>
-          <div className="videos-grid">
-            {videos.map((v, i) => (
-              <div className="video-card" key={i}>
-                <div className="video-embed">
+          <div className="shorts-grid">
+            {shorts.map((v, i) => (
+              <div className="short-card" key={i}>
+                <div className="short-embed">
                   <iframe
                     src={`https://www.youtube.com/embed/${v.id}`}
                     title={v.title}
@@ -267,18 +271,18 @@ export default function Home() {
                     allowFullScreen
                   ></iframe>
                 </div>
-                <div className="video-title">{v.title}</div>
+                <div className="short-title">{v.title}</div>
               </div>
             ))}
           </div>
           <div style={{ textAlign:"center", marginTop:"32px" }}>
-            <a href="https://www.youtube.com/@AashiyanaRealEstate" target="_blank" rel="noreferrer" className="btn-yt-sub">
+            <a href="https://www.youtube.com/@AashiyanaRealEstate/shorts" target="_blank" rel="noreferrer" className="btn-yt-sub">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              Subscribe to Our Channel
+              View All Shorts on YouTube
             </a>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* WHY US */}
       <section className="whyus-section" id="about">
@@ -286,7 +290,7 @@ export default function Home() {
           <div className="whyus-grid">
             <div className="whyus-left">
               <div className="section-eyebrow"><span></span><p>Why Choose Us</p></div>
-              <h2>Aashiyana Real Estate,<br />Done Right</h2>
+              <h2>Karachi Real Estate,<br />Done Right</h2>
               <p>At Aashiyana Associates, we combine deep local knowledge with transparent service. Our team has been operating in North Karachi&apos;s property market for over a decade — and our clients keep coming back.</p>
               <div className="whyus-points">
                 {[
@@ -332,12 +336,12 @@ export default function Home() {
               <div className="rating-right">
                 <div className="stars-row">
                   {[1,2,3,4,5].map(s => (
-                    <svg key={s} width="20" height="20" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg key={s} width="22" height="22" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                   ))}
                 </div>
                 <div className="rating-count">Based on 80+ Google Reviews</div>
-                <a href="https://www.google.com/maps/place/Aashiyana+Associates" target="_blank" rel="noreferrer" className="rating-link">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                <a href="https://www.google.com/maps/place/Aashiyana+Associates+%26+Real+Estate+Marketing+-+Head+Office/@24.9810024,67.0565867,799m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3eb341f1f93a26e9:0x3e158cc8f11b42b4!8m2!3d24.9810024!4d67.0565867" target="_blank" rel="noreferrer" className="rating-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
                   View on Google Maps
                 </a>
               </div>
@@ -383,65 +387,104 @@ export default function Home() {
               <h2>Let&apos;s Find Your Property</h2>
               <p>Whether you&apos;re renting, buying, selling or just exploring — reach out and our agents will respond within the hour.</p>
               <div className="contact-info">
+
+                {/* Location */}
                 <div className="contact-item">
                   <div className="contact-icon">
                     <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64B5F6" strokeWidth="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                   </div>
-                  <div className="contact-item-text"><strong>Head Office</strong>Karachi, Sindh, Pakistan</div>
-                </div>
-                <div className="contact-item">
-                  <div className="contact-icon">
-                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64B5F6" strokeWidth="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  <div className="contact-item-text">
+                    <strong>Head Office</strong>
+                    <a href="https://www.google.com/maps/place/Aashiyana+Associates+%26+Real+Estate+Marketing+-+Head+Office/@24.9810024,67.0565867,799m" target="_blank" rel="noreferrer">
+                      North Karachi, Karachi, Sindh, Pakistan
+                    </a>
                   </div>
-                  <div className="contact-item-text"><strong>Phone &amp; WhatsApp</strong><a href="https://wa.me/923152400381">+92 315 2400381</a></div>
                 </div>
+
+                {/* WhatsApp 1 */}
+                <div className="contact-item">
+                  <div className="contact-icon contact-icon-wa">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  </div>
+                  <div className="contact-item-text">
+                    <strong>WhatsApp / Call</strong>
+                    <a href="https://wa.me/923152400381">+92 315 2400381</a>
+                  </div>
+                </div>
+
+                {/* WhatsApp 2 */}
+                <div className="contact-item">
+                  <div className="contact-icon contact-icon-wa">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  </div>
+                  <div className="contact-item-text">
+                    <strong>WhatsApp / Call</strong>
+                    <a href="https://wa.me/923332287377">+92 333 2287377</a>
+                  </div>
+                </div>
+
+                {/* Email */}
                 <div className="contact-item">
                   <div className="contact-icon">
                     <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64B5F6" strokeWidth="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                   </div>
                   <div className="contact-item-text"><strong>Email</strong><a href="mailto:syedkhurshid.sk@gmail.com">syedkhurshid.sk@gmail.com</a></div>
                 </div>
+
+                {/* YouTube */}
                 <div className="contact-item">
                   <div className="contact-icon">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="#64B5F6"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                   </div>
                   <div className="contact-item-text"><strong>YouTube</strong><a href="https://www.youtube.com/@AashiyanaRealEstate" target="_blank" rel="noreferrer">@AashiyanaRealEstate</a></div>
                 </div>
-                <div className="contact-item">
-                  <div className="contact-icon">
-                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64B5F6" strokeWidth="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                  </div>
-                  <div className="contact-item-text"><strong>Zameen.com</strong><a href="https://www.zameen.com/agents/Karachi/Aashiyana_Associates_Real_Estate_Marketing-190557/" target="_blank" rel="noreferrer">View Our Listings on Zameen</a></div>
-                </div>
+
               </div>
             </div>
-            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-              <div className="contact-form-row">
-                <input type="text" placeholder="Your Name" />
-                <input type="tel" placeholder="Phone Number" />
+
+            {/* Right side: Map + Form */}
+            <div className="contact-right">
+              {/* Google Maps Embed */}
+              <div className="map-embed">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d899.4!2d67.0565867!3d24.9810024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb341f1f93a26e9%3A0x3e158cc8f11b42b4!2sAashiyana%20Associates%20%26%20Real%20Estate%20Marketing%20-%20Head%20Office!5e0!3m2!1sen!2s!4v1"
+                  width="100%"
+                  height="220"
+                  style={{ border:0, borderRadius:"4px" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
-              <input type="email" placeholder="Email Address" />
-              <select>
-                <option value="">I&apos;m Looking To...</option>
-                <option>Rent a Property</option>
-                <option>Buy a Property</option>
-                <option>Sell My Property</option>
-                <option>Get Consultancy</option>
-              </select>
-              <select>
-                <option value="">Preferred Area</option>
-                <option>Surjani Town</option>
-                <option>North Karachi</option>
-                <option>New Karachi</option>
-                <option>Bufferzone</option>
-                <option>Shadman Town</option>
-                <option>North Nazimabad</option>
-                <option>Nazimabad</option>
-                <option>Any Area</option>
-              </select>
-              <textarea placeholder="Additional details or questions..."></textarea>
-              <button type="submit" className="form-submit">Send Enquiry →</button>
-            </form>
+
+              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                <div className="contact-form-row">
+                  <input type="text" placeholder="Your Name" />
+                  <input type="tel" placeholder="Phone Number" />
+                </div>
+                <input type="email" placeholder="Email Address" />
+                <select>
+                  <option value="">I&apos;m Looking To...</option>
+                  <option>Rent a Property</option>
+                  <option>Buy a Property</option>
+                  <option>Sell My Property</option>
+                  <option>Get Consultancy</option>
+                </select>
+                <select>
+                  <option value="">Preferred Area</option>
+                  <option>Surjani Town</option>
+                  <option>North Karachi</option>
+                  <option>New Karachi</option>
+                  <option>Bufferzone</option>
+                  <option>Shadman Town</option>
+                  <option>North Nazimabad</option>
+                  <option>Nazimabad</option>
+                  <option>Any Area</option>
+                </select>
+                <textarea placeholder="Additional details or questions..."></textarea>
+                <button type="submit" className="form-submit">Send Enquiry →</button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -459,14 +502,17 @@ export default function Home() {
               <a href="https://www.youtube.com/@AashiyanaRealEstate" target="_blank" rel="noreferrer" className="fs-yt" aria-label="YouTube">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               </a>
-              <a href="https://wa.me/923152400381" target="_blank" rel="noreferrer" className="fs-wa" aria-label="WhatsApp">
+              <a href="https://wa.me/923152400381" target="_blank" rel="noreferrer" className="fs-wa" aria-label="WhatsApp 1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+              <a href="https://wa.me/923332287377" target="_blank" rel="noreferrer" className="fs-wa" aria-label="WhatsApp 2">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               </a>
               <a href="https://www.zameen.com/agents/Karachi/Aashiyana_Associates_Real_Estate_Marketing-190557/" target="_blank" rel="noreferrer" className="fs-zm" aria-label="Zameen.com">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#333"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
               </a>
               <a href="mailto:syedkhurshid.sk@gmail.com" className="fs-em" aria-label="Email">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="#fff" strokeWidth="2" fill="none"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               </a>
             </div>
           </div>
@@ -495,7 +541,8 @@ export default function Home() {
             <ul>
               <li><a href="https://www.youtube.com/@AashiyanaRealEstate" target="_blank" rel="noreferrer">YouTube Channel</a></li>
               <li><a href="https://www.zameen.com/agents/Karachi/Aashiyana_Associates_Real_Estate_Marketing-190557/" target="_blank" rel="noreferrer">Zameen.com Profile</a></li>
-              <li><a href="https://wa.me/923152400381" target="_blank" rel="noreferrer">WhatsApp</a></li>
+              <li><a href="https://wa.me/923152400381" target="_blank" rel="noreferrer">WhatsApp: 0315-2400381</a></li>
+              <li><a href="https://wa.me/923332287377" target="_blank" rel="noreferrer">WhatsApp: 0333-2287377</a></li>
               <li><a href="mailto:syedkhurshid.sk@gmail.com">Email Us</a></li>
             </ul>
           </div>
@@ -506,10 +553,17 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* WhatsApp Float */}
-      <a href="https://wa.me/923152400381" className="wa-float" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </a>
+      {/* Two WhatsApp Floating Buttons */}
+      <div className="wa-float-group">
+        <a href="https://wa.me/923152400381" className="wa-float-btn" target="_blank" rel="noreferrer" aria-label="WhatsApp 0315-2400381">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span>0315-2400381</span>
+        </a>
+        <a href="https://wa.me/923332287377" className="wa-float-btn" target="_blank" rel="noreferrer" aria-label="WhatsApp 0333-2287377">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span>0333-2287377</span>
+        </a>
+      </div>
     </>
   );
 }
