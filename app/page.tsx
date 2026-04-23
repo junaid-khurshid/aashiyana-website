@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const reviews = [
   { name: "Muhammad Asif", rating: 5, date: "2 months ago", text: "Excellent service! Aashiyana Associates helped me find the perfect house in North Karachi within my budget. Very professional and trustworthy team. Highly recommended!", avatar: "MA" },
@@ -58,8 +59,8 @@ export default function Home() {
           <ul className="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#areas">Areas</a></li>
-            <li><a href="#listings">Listings</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="/listings">Listings</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <a href="#contact" className="nav-cta">Get in Touch</a>
@@ -225,10 +226,13 @@ export default function Home() {
               <div className="section-eyebrow"><span></span><p>Properties</p></div>
               <h2>Featured Listings</h2>
             </div>
-            <div className="listings-filter">
+            <div style={{ display:"flex", gap:"12px", alignItems:"center", flexWrap:"wrap" }}>
+              <div className="listings-filter">
               <button className="filter-btn active">All</button>
               <button className="filter-btn">For Rent</button>
               <button className="filter-btn">For Sale</button>
+              </div>
+              <Link href="/listings" className="btn-view-all">View All Properties →</Link>
             </div>
           </div>
           <div className="listings-grid">
