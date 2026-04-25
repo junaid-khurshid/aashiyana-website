@@ -209,10 +209,10 @@ export default function Home() {
           <div className="areas-grid">
             {[
               { n: "01", name: "Surjani Town", sub: "Sector 7, 7A, 7B, 10, 11", type: "Houses · Plots · Shops" },
-              { n: "02", name: "North Karachi", sub: "Sectors 11-B, 14-B, 15, 16", type: "Houses · Apartments · Plots" },
+              { n: "02", name: "North Karachi", sub: "Sectors 8,9, 11-A, 11-B, 11C-1/2/3", type: "Houses · Apartments · Plots" },
               { n: "03", name: "New Karachi", sub: "Sector 5, 5-J, 5-L, 5-Q", type: "Houses · Plots · Commercial" },
-              { n: "04", name: "Bufferzone", sub: "Sector 15, 15-A, 16, 16-A", type: "Houses · Apartments" },
-              { n: "05", name: "Shadman Town", sub: "Shadman Colony, Phase 1 & 2", type: "Houses · Plots · Shops" },
+              { n: "04", name: "Bufferzone", sub: "Sector 15 (All Sectors), 16 (All Sectors)", type: "Houses · Apartments" },
+              { n: "05", name: "Shadman Town", sub: "14-A, 14-B", type: "Houses · Plots · Shops" },
               { n: "06", name: "North Nazimabad", sub: "Blocks A through T", type: "Houses · Apartments · Flats" },
               { n: "07", name: "Nazimabad", sub: "Block 1, 2, 3, 4, 5", type: "Houses · Plots · Commercial" },
             ].map((a) => (
